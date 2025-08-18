@@ -1,0 +1,3 @@
+bibliotecas: math,string, map/filter
+string é um tipo de classe
+z = "beto" não é um string, é uma cadeia de caracteries(vetor ou array)
