@@ -4,6 +4,7 @@
 using namespace std;
 
 class Music{
+private:
     string title;
     string composer;
 public:
@@ -17,6 +18,7 @@ public:
 };
 
 class Playlist{
+private:
     vector<Music> songs;
     string name;
 public:

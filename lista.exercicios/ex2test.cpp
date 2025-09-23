@@ -47,6 +47,9 @@ public:
     }
     ~Profile() {
         cout << "Profile '" << name << "' destroyed\n";
+            for (auto p : playlists) {
+            delete p;
+        }
     }
     void createplaylist(Playlist* p) {
         playlists.push_back(p);
@@ -67,7 +70,7 @@ int main() {
           m4("Musica 4", "Autor 4"),
           m5("Musica 5", "Autor 5");
 
-    Playlist p1("Favoritas"), p2("Rock");
+    Playlist* p1("Favoritas"), p2("Rock");
 
     p1.createsongs(&m1);
     p1.createsongs(&m2);
@@ -77,8 +80,8 @@ int main() {
 
     Profile pr1("Vitor");
 
-    pr1.createplaylist(&p1);
-    pr1.createplaylist(&p2);
+    pr1.createplaylist(p1);
+    pr1.createplaylist(p2);
 
     pr1.listplaylist();
 
