@@ -42,8 +42,7 @@ private:
     string dataSaida, dataPrevista;
     bool devolvido{false};
 public:
-    Emprestimo (Livro* l, Aluno* a, string saida, string prevista) : 
-        livro(l), aluno(a), dataSaida(std::move(saida)), dataPrevista(std::move(prevista)){}
+    Emprestimo (Livro* l, Aluno* a, string saida, string prevista) : livro(l), aluno(a), dataSaida(std::move(saida)), dataPrevista(std::move(prevista)){}
     
     bool confirmar()
     {
