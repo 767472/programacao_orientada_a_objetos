@@ -19,7 +19,7 @@ public:
 
 class Playlist{
 private:
-    vector<Music> songs;
+    vector<Music> songs; // Relação de agregação
     string name;
 public:
     Playlist(string n) : name(n){
@@ -40,7 +40,7 @@ public:
         string getName(){return name;}
 };
 class Profile{
-    vector<Playlist> playlists;
+    vector<Playlist> playlists; // Relação de composição (não aplicado no codigo)
     string name;
 public:
     Profile(string n) : name(n){
@@ -61,25 +61,27 @@ public:
 };
 
 int main(){
+    cout << "\nCriação das Musicas\n";
    Music m1("Musica 1", "Autor 1"),
           m2("Musica 2", "Autor 2"),
           m3("Musica 3", "Autor 3"),
           m4("Musica 4", "Autor 4"),
           m5("Musica 5", "Autor 5");
 
+    cout << "\nCriação das Playlist\n";
     Playlist p1("Favoritas"), p2("Rock");
-
+    cout << "\nAdicionando as Musicas as playlist\n";
     p1.createsongs(m1);
     p1.createsongs(m2);
     p2.createsongs(m3);
     p2.createsongs(m4);
     p2.createsongs(m5);
-
+    cout << "\nCriação do Profile\n";
     Profile pr1("Vitor");
-
+    cout << "\nCriação da playlist dentro do perfil\n";
     pr1.createplaylist(p1);
     pr1.createplaylist(p2);
-
+    cout << "\n listar playlist e suas musicas\n";
     pr1.listplaylist();
     p1.listsongs();
     p2.listsongs();

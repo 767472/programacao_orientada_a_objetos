@@ -26,7 +26,7 @@ public:
     ~Playlist() {
         cout << "Playlist '" << name << "' destroyed\n";
     }
-    void createsongs(Music* m) {
+    void addsongs(Music* m) {
         songs.push_back(m);
     }
     void listsongs() const {
@@ -47,8 +47,8 @@ public:
     }
     ~Profile() {
         cout << "Profile '" << name << "' destroyed\n";
-            for (auto p : playlists) {
-            delete p;
+        for (auto p : playlists) {
+            delete p; // Libera a memória das playlists
         }
     }
     void createplaylist(Playlist* p) {
@@ -70,19 +70,24 @@ int main() {
           m4("Musica 4", "Autor 4"),
           m5("Musica 5", "Autor 5");
 
-    Playlist* p1("Favoritas"), p2("Rock");
+    // Corrigindo a criação das playlists
+    Playlist* p1 = new Playlist("Favoritas");
+    Playlist* p2 = new Playlist("Rock");
 
-    p1.createsongs(&m1);
-    p1.createsongs(&m2);
-    p2.createsongs(&m3);
-    p2.createsongs(&m4);
-    p2.createsongs(&m5);
+    // Adicionando músicas às playlists
+    p1->addsongs(&m1);
+    p1->addsongs(&m2);
+    p2->addsongs(&m3);
+    p2->addsongs(&m4);
+    p2->addsongs(&m5);
 
+    // Criando o perfil e adicionando as playlists
     Profile pr1("Vitor");
 
     pr1.createplaylist(p1);
     pr1.createplaylist(p2);
 
+    // Listando as playlists e músicas
     pr1.listplaylist();
 
     return 0;
