@@ -4,6 +4,7 @@
 using namespace std;
 
 class Livro{
+private:
     string titulo;
     string autor;
     string ano;
@@ -18,6 +19,7 @@ public:
 };
 
 class Biblioteca{
+private:
     vector<Livro> livros;
 public:
     Biblioteca(){
