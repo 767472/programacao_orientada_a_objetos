@@ -67,7 +67,6 @@ int main(){
 
     Playlist p1("Favoritas"), p2("Rock");
 
-    // Adiciona músicas nas playlists ANTES de adicionar ao perfil
     p1.createsongs(m1);
     p1.createsongs(m2);
     p2.createsongs(m3);
