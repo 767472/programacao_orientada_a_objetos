@@ -19,7 +19,7 @@ public:
 
 class Playlist{
 private:
-    vector<Music> songs; // Relação de agregação
+    vector<Music> songs; // Relação de composição
     string name;
 public:
     Playlist(string n) : name(n){
@@ -40,7 +40,7 @@ public:
         string getName(){return name;}
 };
 class Profile{
-    vector<Playlist> playlists; // Relação de composição (não aplicado no codigo)
+    vector<Playlist> playlists; // Relação de agregaçãp (não aplicado no codigo)
     string name;
 public:
     Profile(string n) : name(n){
