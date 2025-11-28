@@ -1,41 +1,20 @@
 #ifndef VIDEO_H
 #define VIDEO_H
 
-#include "Midia.h" 
-#include <sstream>
+#include "Midia.h"
 
-class Video final : public Midia {
+class Video : public Midia {
 private:
-    std::string resolucao_; 
-    std::string codec_;     
+    std::string resolucao;
+    std::string codec;
 
 public:
-    // Construtor
-    Video(const std::string& titulo, int ano, double duracao,
-    const std::string& resolucao, const std::string& codec): Midia(titulo, ano, duracao), 
-    resolucao_(resolucao), codec_(codec) {
-      std::cout << "Video ("<< titulo <<") CRIADO";
-    }
+    Video(std::string titulo, int ano, double duracao, std::string resolucao, std::string codec);
+    ~Video() override;
 
-    // Destrutor
-    ~Video() override {
-      std::cout << "Video ("<< titulo <<") DESTRUIDO";
-    } 
-    void reproduzir() override {
-        std::cout << "Iniciando reprodução de Vídeo: | " << titulo << " | na resolução | " << resolucao_ << " |.\n";
-    }
-
-    void infoDetalhada() const override {
-        Midia::infoDetalhada(); 
-        std::cout << "  > Resolução: | " << resolucao_ << " |, Codec: | " << codec_ << " |\n";
-    }
-    bool combina(const std::string& filtro) const override {
-        if (titulo.find(filtro) != std::string::npos || 
-            resolucao_.find(filtro) != std::string::npos) {
-            return true;
-        }
-        return false;
-    }
+    void reproduzir() const override;
+    void infoDetalhada() const override;
+    bool combina(std::string termo) const override;
 };
 
 #endif
