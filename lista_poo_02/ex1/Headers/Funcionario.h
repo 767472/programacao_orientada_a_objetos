@@ -1,5 +1,5 @@
-#ifndef FUNCIONARIO_EXERCICIO_H
-#define FUNCIONARIO_EXERCICIO_H
+#ifndef FUNCIONARIO_H
+#define FUNCIONARIO_H
 
 #include <iostream>
 #include <string>

@@ -8,7 +8,7 @@ class Midia {
 protected:
     std::string titulo;
     int ano;
-    double duracao; // em minutos
+    double duracao;
 
 public:
     Midia(std::string titulo, int ano, double duracao);
