@@ -7,9 +7,9 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": false,
-      "cwd": "/home/vtr/Documentos/POO/programacao_orientada_a_objetos",
-      "program": "/home/vtr/Documentos/POO/programacao_orientada_a_objetos/build/Debug/outDebug",
+      "externalConsole": true,
+      "cwd": "c:/Users/Vitor/OneDrive/Documents/.FACULDADE/DICIPLINAS/3_semestre/POO/programacao_orientada_a_objetos",
+      "program": "c:/Users/Vitor/OneDrive/Documents/.FACULDADE/DICIPLINAS/3_semestre/POO/programacao_orientada_a_objetos/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
